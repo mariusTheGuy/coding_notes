@@ -1,0 +1,18 @@
+cd ~
+cat .gitconfig
+[user]
+	name = marius
+	email = marius.theguy@gmail.com
+[core]
+	excludesfile = /Users/marius/.gitignore_global
+
+
+We use the 'gitignore_global' file template contained in this folder
+
+Change the name of the file from 'gitignore_global' to '.gitignore_global'
+AND/OR
+Change the name of the file from 'gitigore' to '.gitignore'
+
+And paste it in the current directory or the git global directory (/Users/marius/.gitignore_global)
+
+

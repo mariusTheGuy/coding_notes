@@ -1,0 +1,23 @@
+<%- include('../layout/boilerplate') %>
+
+<div class="container">
+    <form action="/api/login" method="POST" class="flex-center-column auth-form">
+
+        <h1>Login <img src="/assets/icons/user-check.svg" alt="User"></h1>
+
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="Email..." id="email">
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Password..." id="password">
+        </div>
+
+        <a href="/register" class="redirect-link">Don't have an account?</a>
+
+        <button type="submit" name="submit">Submit</button>
+    </form>
+</div>
+
+<%- include('../partials/footer') %>

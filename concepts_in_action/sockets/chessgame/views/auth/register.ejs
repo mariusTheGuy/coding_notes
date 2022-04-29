@@ -1,0 +1,31 @@
+<%- include('../layout/boilerplate') %>
+
+<div class="container">
+    <form action="/register" method="POST" class="flex-center-column auth-form">
+
+        <h1>Register <img src="/assets/icons/user-plus.svg" alt="User"></h1>
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input autofocus required type="text" name="username" placeholder="Username..." id="username">
+        </div>
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input required type="email" name="email" placeholder="Email..." id="email">
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input required type="password" name="password" placeholder="Password..." id="password">
+        </div>
+        <div class="input-group">
+            <label for="confirmPassword">Username</label>
+            <input required type="password" name="confirmPassword" placeholder="Confirm Password..."
+                id="confirmPassword">
+        </div>
+
+        <a href="/login" class="redirect-link">Already have an account?</a>
+
+        <button type="submit" name="submit">Submit</button>
+    </form>
+</div>
+
+<%- include('../partials/footer') %>
