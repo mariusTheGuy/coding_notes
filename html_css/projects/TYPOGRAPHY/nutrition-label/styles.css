@@ -1,0 +1,95 @@
+/* by default, the browser includes the border and padding
+this is how we fix it */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+body {
+  font-family: Open Sans, sans-serif;
+}
+
+header h1 {
+  text-align: center;
+  margin: -4px 0px;
+  letter-spacing: 0.15px;
+}
+p {
+  margin: 0px;
+}
+
+.label {
+  border: 2px solid black;
+  width: 270px;
+  margin: 20px auto;
+  padding: 0 7px;
+}
+.divider {
+  border-bottom: 1px solid #888989;
+  margin: 2px 0px;
+  /* clear property set to right. 
+  This will clear the float property, 
+  pushing the divider and any following content down below the float text. */
+  clear: right;
+}
+.bold {
+  font-weight: 800;
+}
+.right {
+  float: right;
+}
+
+/* The rem unit stands for root em, 
+and is relative to the font size of the html element. */
+/* thus, 'sm-text' class will have a font-size of 13.6px 
+(remember that you set your html to have a font-size of 16px). */
+.sm-text {
+  font-size: 0.85rem;
+}
+
+.calories-info h1 {
+  margin: -5px -2px;
+  overflow: hidden;
+}
+.calories-info span {
+  font-size: 1.2em;
+  margin-top: -7px;
+}
+
+.lg {
+  height: 10px;
+}
+.md {
+  height: 5px;
+}
+.lg,
+.md {
+  background-color: black;
+  border: 0px;
+}
+
+.indent {
+  margin-left: 1em;
+}
+
+/* The :not pseudo-selector can be used 
+to select all elements that do not match the given CSS rule.
+ie.
+div:not(#example) {
+  color: red;
+}
+The above selects all div elements without an id of example. */
+.daily-value p:not(.no-divider) {
+  border-bottom: 1px solid #888989;
+}
+.dbl-indent {
+  margin-left: 2em;
+}
+
+.note {
+  font-size: 0.6rem;
+  margin: 5px 0px;
+  padding: 0px 8px;
+  text-indent: -8px;
+}

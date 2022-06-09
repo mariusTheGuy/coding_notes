@@ -1,0 +1,58 @@
+.canvas {
+  width: 500px;
+  height: 600px;
+  background-color: #4d0f00;
+  /* Add padding of 1px to the .canvas element 
+  to give the .one element something solid to push off of. */
+  /* padding: 1px; */
+
+  /* Adding 1 pixel of padding to the top, bottom, left, and right 
+  of the canvas changed its dimensions to 502 pixels x 602 pixels.
+  as folow, this way the canvas changes back to its original dimensions. */
+  overflow: hidden;
+  filter: blur(2px);
+}
+.frame {
+  width: 500px;
+  border: 50px solid black;
+  padding: 50px;
+  margin: 20px auto;
+}
+.one {
+  width: 425px;
+  height: 150px;
+  background-color: #efb762;
+  margin: 20px auto;
+  box-shadow: 0 0 3px 3px #efb762;
+  border-radius: 9px;
+  transform: rotate(-0.6deg);
+}
+.two {
+  width: 475px;
+  height: 200px;
+  background-color: #8f0401;
+  /* top margin, horizontal margin to auto, and bottom margin */
+  margin: 0 auto 20px;
+  box-shadow: 0 0 3px 3px #8f0401;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 10px;
+  transform: rotate(0.4deg);
+}
+.three {
+  width: 91%;
+  height: 28%;
+  background-color: #b20403;
+  margin: auto;
+  filter: blur(2px);
+  box-shadow: 0 0 5px 5px #b20403;
+  /* top-left, top-right, bottom-right, and bottom-left corners. */
+  border-radius: 30px 25px 60px 12px;
+  transform: rotate(-0.2deg);
+}
+
+.one,
+.two {
+  filter: blur(1px);
+}

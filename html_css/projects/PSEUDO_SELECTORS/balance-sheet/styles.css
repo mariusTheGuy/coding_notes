@@ -1,0 +1,176 @@
+html {
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  color: #0a0a23;
+}
+
+/* You can use CSS to make elements with this class completely
+ hidden from the visual page, but still be announced by 
+ screen readers. */
+/* These are a common set of properties  */
+/* The [attribute="value"] selector targets any element that has an attribute with a specific value */
+span[class~="sr-only"] {
+  /* Rather than having to constantly double-check you are not 
+overwriting your earlier properties, you can use the 
+!important keyword to ensure these properties are always applied */
+  border: 0px !important;
+  /* to define the visible portions of an element.  */
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  clip-path: inset(50%) !important;
+  -webkit-clip-path: inset(50%) !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  position: absolute !important;
+  padding: 0px !important;
+  margin: -1px !important;
+}
+
+h1 {
+  max-width: 37.25rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+}
+
+h1 .flex {
+  display: flex;
+  flex-direction: column-reverse;
+  /* to create some space between the elements. */
+  gap: 1rem;
+}
+
+/* pseudo selector */
+/* *** Remember that your span elements are reversed, visually, 
+so this will appear to be the second element on the page. */
+h1 .flex span:first-of-type {
+  font-size: 0.7em;
+}
+h1 .flex span:last-of-type {
+  font-size: 1.2em;
+}
+
+section {
+  max-width: 40rem;
+  margin: 0 auto;
+  border: 2px solid #d0d0d5;
+}
+
+#years {
+  display: flex;
+  /* affects main axis */
+  justify-content: flex-end;
+  /* And make the element sticky.  */
+  position: sticky;
+  /* Fix it to the top of its container */
+  top: 0;
+  color: #fff;
+  background-color: #0a0a23;
+  /* Ensure your years do not get hidden by setting a  */
+  z-index: 999;
+  /* '-2px' so it ovelays their border container */
+  margin: 0 -2px;
+  padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+}
+
+/* will target any span element that has a class attribute 
+set, regardless of the attribute's value. */
+#years span[class] {
+  font-weight: bold;
+  width: 4.5rem;
+  text-align: right;
+}
+
+.table-wrap {
+  padding: 0 0.75rem 1.5rem 0.75rem;
+}
+
+table {
+  /* will allow cell borders to collapse into a single border */
+  border-collapse: collapse;
+  border: 0;
+  width: 100%;
+  position: relative;
+  margin-top: 3rem;
+}
+table caption {
+  color: #356eaf;
+  font-size: 1.3em;
+  font-weight: normal;
+  position: absolute;
+  /* margin: -2.25rem 0px 0px 0.5rem; */
+  top: -2.25rem;
+  left: 0.5rem;
+}
+
+tbody td {
+  min-width: 4rem;
+  max-width: 4rem;
+  /* This approach ensures that the width is fixed, whereas 
+  setting width specifically would allow the elements 
+  to shrink to the container (because we are using flexbox). */
+  width: 100vw;
+}
+
+tbody th {
+  width: calc(100% - 12rem);
+}
+
+/* The key difference between tr[class="total"] 
+and tr.total is that the first will select 
+tr elements where the only class is total. 
+The second will select tr elements where the class 
+includes total. */
+tr[class="total"] {
+  border-bottom: 4px double #0a0a23;
+  font-weight: bold;
+}
+tr[class="total"] th {
+  text-align: left;
+  padding: 0.5rem 0 0.25rem 0.5rem;
+}
+
+tr.total:hover {
+  background-color: #99c9ff;
+}
+tr.total td {
+  text-align: right;
+  padding: 0 0.25rem;
+}
+/* to target specific elements based on their order 
+among siblings of the same type. */
+tr.total td:nth-of-type(3) {
+  padding-right: 0.5rem;
+}
+td.current {
+  font-style: italic;
+}
+tr.data {
+  background-image: linear-gradient(
+    to bottom,
+    #dfdfe2 1.845rem,
+    white 1.845rem
+  );
+}
+tr.data th {
+  text-align: left;
+  padding-top: 0.3rem;
+  padding-left: 0.5rem;
+}
+tr.data th .description {
+  display: block;
+  font-style: italic;
+  font-weight: normal;
+  padding: 1rem 0 0.75rem;
+  margin-right: -13.5rem;
+}
+tr.data td {
+  vertical-align: top;
+  text-align: right;
+  padding: 0.3rem 0.25rem 0;
+}
+tr.data td:last-of-type {
+  padding-right: 0.5rem;
+}

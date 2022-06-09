@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey-Form</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+
+    <body>
+        <h1 id="title">freeCodeCamp Survey Form</h1>
+        <p id="description">Thank you for taking the time to help us improve the platform</p>
+        <form id="survey-form">
+            <!-- <fieldset> -->
+            <label id="name-label">Name: <input type="text" required id="name" placeholder="Enter your name" /></label>
+            <label id="email-label">Email: <input type="email" required id="email"
+                    placeholder="Enter your email" /></label>
+            <label id="number-label">Age
+                (optional)<input id="number" type="number" min="18" max="120" placeholder="Age" /></label>
+            <!-- <label>Create a New Password: <input type="password" pattern="[a-z0-5]{8,}" required id="password"/></label> -->
+            <!-- </fieldset> -->
+            <label>Which option best describes your current role?
+                <select id="dropdown">
+                    <option></option>
+                    <option></option>
+                </select></label>
+
+            <!-- <fieldset> -->
+            <label><input class="inline" type="radio" name="recommend" value="definately" /> Definately</label>
+            <label><input class="inline" type="radio" name="recommend" value="maybe" /> Maybe</label>
+            <!-- </fieldset> -->
+            <!-- <fieldset> -->
+            <label><input class="inline" type="checkbox" value="front-end" /> Front-end Projects</label>
+            <label><input class="inline" type="checkbox" value="back-end" /> Back-end Projects</label>
+            <label><input class="inline" type="checkbox" value="data-vis" /> Data Visualization</label>
+            <!-- </fieldset> -->
+            <label>Any comments or suggestions?
+                <textarea></textarea></label>
+            <input type="submit" id="submit" value="Submit" />
+
+        </form>>
+
+
+    </body>
+
+</html>

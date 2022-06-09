@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+#gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* affects main axis */
+  justify-content: center;
+  /* affect cross-axis */
+  align-items: center;
+  padding: 0 4px;
+}
+#gallery img {
+  width: 25%;
+  height: 300px;
+  /* This will tell the image to fill the img container 
+  while maintaining aspect ratio, resulting in cropping to fit. */
+  object-fit: cover;
+  margin-top: 8px;
+  padding: 0 4px;
+  border-radius: 10px;
+}
+body {
+  margin: 0;
+  font-family: Arial;
+  background-color: #ebe7e7;
+}
+.header {
+  text-align: center;
+  padding: 32px;
+  background: #e0dddd;
+}
+
+/* @media not|only mediatype and (mediafeature and|or|not mediafeature) */
+/* ie. @media only screen and (max-width: 600px) { */
+@media (max-width: 800px) {
+  #gallery img {
+    width: 50%;
+  }
+}
+@media (max-width: 600px) {
+  #gallery img {
+    width: 100%;
+  }
+}

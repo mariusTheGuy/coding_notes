@@ -1,0 +1,207 @@
+/* Setting the scroll-behavior to smooth is preferred by most users. 
+However, some users find this to be too slow, and prefer to have 
+the scrolling happen instantaneously.
+There exists a media rule to set CSS based on the user's browser settings. 
+This media rule is called prefers-reduced-motion, 
+and expects one of the following values:
+- reduce
+- no-preference */
+/* here, the scroll-behavior of smooth is only set if 
+the user's browser setting is no-preference */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    /* Clicking on the navigation links should jump the viewport 
+      to the relevant section. 
+      However, this jumping can be disorienting for some users. */
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: #f5f6f7;
+  color: #1b1b32;
+  font-family: Helvetica;
+  margin: 0;
+}
+
+/* SVG contains a path attribute which allows the image 
+to be scaled without affecting the resolution of the resultant image. */
+#logo {
+  width: max(100px, 18vw);
+  background-color: #0a0a23;
+  /* the logo should retain an aspect ratio of 35 / 4 */
+  aspect-ratio: 35/4;
+  padding: 0.4rem;
+}
+
+main {
+  padding-top: 50px;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  background-color: #1b1b32;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+}
+
+section {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto 10px auto;
+}
+
+h1 {
+  color: #f1be32;
+  font-size: min(5vw, 1.2em);
+  text-align: center;
+}
+h2 {
+  border-bottom: 4px solid #dfdfe2;
+  margin-top: 0px;
+  padding-top: 60px;
+}
+
+h1,
+h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav {
+  width: 50%;
+  max-width: 300px;
+  height: 50px;
+}
+nav > ul {
+  display: flex;
+  /* affects main axis */
+  justify-content: space-evenly;
+  /* On small screens, the unordered list in the navigation bar 
+  overflows the right side of the screen.
+  Fix: wrap the ul content.  */
+  flex-wrap: wrap;
+  /* Then, set the following CSS properties to correctly align the text: */
+  align-items: center;
+  padding-inline-start: 0;
+  margin-block: 0;
+  height: 100%;
+}
+
+nav > ul > li {
+  color: #dfdfe2;
+  margin: 0 0.2rem;
+  padding: 0.2rem;
+  display: block;
+}
+
+/* the contrast between the text and 
+the background of a heading should be at least 4.5:1. */
+/* https://webaim.org/resources/contrastchecker/ */
+li > a {
+  /* causes the element to take the computed value 
+of the property from its parent element. */
+  color: inherit;
+  text-decoration: none;
+}
+
+nav > ul > li:hover {
+  color: #1b1b32;
+  background-color: #dfdfe2;
+  cursor: pointer;
+}
+
+/* There is a common pattern to visually hide text
+ for only screen readers to read. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+p {
+  margin-top: 5px;
+  padding-left: 15px;
+  font-size: 20px;
+}
+p::before {
+  content: "Question #";
+}
+
+.info {
+  padding: 10px 0px 0px 5px;
+}
+.formrow {
+  margin: 30px 0px 0px 0px;
+  padding: 0px 15px;
+}
+input {
+  font-size: 16px;
+}
+
+.info label,
+.info input {
+  /* To align the input boxes with each other, */
+  display: inline-block;
+  text-align: right;
+}
+.info input {
+  width: 50%;
+  text-align: left;
+}
+.info label {
+  width: 10%;
+  min-width: 55px;
+}
+
+/* It is useful to see the default border around 
+the fieldset elements, during development. */
+.question {
+  border: none;
+  padding-bottom: 0px;
+}
+.question-block {
+  text-align: left;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 5px;
+}
+
+.answers-list {
+  list-style: none;
+  padding: 0px;
+}
+
+button {
+  display: block;
+  margin: 40px auto;
+  width: 40%;
+  padding: 15px;
+  font-size: 23px;
+  background: #d0d0d5;
+  border: 3px solid #3b3b4f;
+}
+
+footer {
+  background-color: #2a2a40;
+  display: flex;
+  justify-content: center;
+}
+footer,
+footer a {
+  color: #dfdfe2;
+}
+address {
+  text-align: center;
+  padding: 10px;
+}
